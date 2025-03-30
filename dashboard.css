@@ -1,0 +1,472 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: #f5f5f5;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: rgb(43, 24, 13);
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar.closed {
+    left: -250px; /* Itago ang sidebar */
+}
+
+/* Sidebar links and icons styling */
+.sidebar a {
+    display: flex;
+    align-items: center;  /* Align icons and text horizontally */
+    padding: 12px 20px;
+    color: #ddd;
+    text-decoration: none;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    text-align: left;  /* Ensures text is aligned to the left */
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar a i {
+    color: maroon; /* Maroon color for the icon */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.sidebar a:hover {
+    background-color: #6c3f27;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: rgb(43, 24, 13);
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #ddd;
+    text-decoration: none;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar a i {
+    width: 25px; /* Pantay na lapad ng icons */
+    text-align: center;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.sidebar a span {
+    flex-grow: 1; /* Para ang text ay mag-adjust nang pantay */
+}
+
+
+.sidebar a:hover {
+    background-color: #6c3f27;
+}
+
+/* Center logout button */
+.logout-btn {
+    display: block;
+    text-align: center;
+    padding: 15px 0;
+    color: #ddd;
+    text-decoration: none;
+    font-size: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: auto;
+    align-self: center; /* This ensures the logout button is centered horizontally */
+}
+
+.logout-btn span {
+    display: inline-block; /* Ensure span behaves properly */
+    margin-right: 7px;
+}
+
+.logout-btn:hover {
+    color: white;
+}
+
+/* Sidebar header and image */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.sidebar-header img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.sidebar-header h3 {
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    margin: 0;
+}
+
+/* Close button style */
+.close-btn {
+    position: absolute;
+    top: 10px; 
+    right: 15px; /* Ilagay sa kanan */
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.close-btn:hover {
+    color: #ffcc00;
+}
+
+/* Sidebar Toggle Button (☰) */
+.toggle-btn {
+    position: fixed;
+    top: 25px;
+    left: 20px;
+    background: transparent;
+    color: rgb(43, 24, 13);
+    padding: 5px 10px;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 1000;
+    display: none; /* Hidden by default since sidebar is open */
+}
+
+.toggle-btn:hover {
+    color: rgb(94, 79, 62);
+}
+
+.toggle-btn i {
+    font-size: 22px;
+}
+
+/* Hide the toggle button when sidebar is open */
+.sidebar:not(.closed) ~ .toggle-btn {
+    display: none;
+}
+
+/* Content Area */
+.content-area {
+    margin-left: 250px;
+    padding: 40px;
+    transition: margin-left 0.3s ease;
+    width: 100%;
+}
+
+.sidebar.closed + .content-area {
+    margin-left: 50px;
+}
+
+.topbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 20px;
+background: white;
+box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+margin-bottom: 20px;
+margin-top: -20px;
+}
+
+
+.admin-welcome {
+    font-size: 20px;
+    color: rgb(43, 24, 13);
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-bar {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.topbar i {
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(43, 24, 13);
+}
+
+.topbar i:hover {
+    color: rgb(94, 79, 62);
+}
+
+@media (max-width: 1024px) {
+/* Sidebar covers the entire screen on smaller devices */
+.sidebar {
+    width: 100%;
+    left: -100%;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+/* Ensure content is fully visible when sidebar is closed */
+.sidebar.closed + .content-area {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* Sidebar toggle button should always be visible */
+.toggle-btn {
+    display: block;
+    top: 15px;
+    left: 15px;
+    z-index: 1100;
+}
+}
+
+@media (max-width: 768px) {
+/* Optimize Sidebar for Mobile */
+.sidebar {
+    width: 80%;
+    left: -80%;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+/* Content adapts to small screen */
+.content-area {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Top bar adjustments */
+.topbar {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 15px;
+}
+
+.topbar-right {
+    gap: 10px;
+    justify-content: center;
+}
+}
+
+@media (max-width: 480px) {
+/* Sidebar covers full width for smallest screens */
+.sidebar {
+    width: 100%;
+    left: -100%;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+/* Adjust header elements */
+.sidebar-header img {
+    width: 30px;
+}
+
+.sidebar-header h3 {
+    font-size: 18px;
+}
+
+.content-area {
+    padding: 15px;
+}
+
+/* Reduce font size for better readability */
+.admin-welcome {
+    font-size: 18px;
+}
+
+.search-bar {
+    width: 100%;
+}
+
+/* Icon size adjustment */
+.topbar i {
+    font-size: 18px;
+}
+}
+
+.sidebar-widgets {
+width: 290px;
+position: absolute;
+right: 20px;
+top: 110px;
+background: #f8f9fa;
+padding: 15px;
+border-radius: 8px;
+box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-widgets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* This adds space between weather and news widgets */
+}
+
+.weather-widget,
+.news-widget {
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.weather-widget h3,
+.news-widget h3 {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.weather-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.weather-search input {
+    padding: 8px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 13px;
+    outline: none;
+    text-align: center;
+}
+
+.weather-search button {
+    background: #ffcc00;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.weather-search button:hover {
+    background: #e6b800;
+    transform: scale(1.05);
+}
+
+#news ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#news ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+#news ul li a {
+    text-decoration: none;
+    color: #e6b800;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+#news ul li a:hover {
+    color:rgb(36, 119, 3);
+    text-decoration: underline;
+}
+
+.document-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
+.document-box {
+    background: #ddd;
+    padding: 15px;
+    text-align: center;
+    border: 2px solid #600;
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+.highlight {
+    border-color: blue;
+}
+.document-box button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    background-color: #600;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.document-box button:hover {
+    background-color: #800;
+}

@@ -1,0 +1,284 @@
+/* Global Settings */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: #f4f1eb; /* Light wood color */
+    color: #3c2a21; /* Dark wood-like color */
+    line-height: 1.6;
+}
+
+/* Container for pages */
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 60px;
+    background: #f1ebd8; /* Very light beige background */
+}
+
+/* Content and text inside the container */
+.container .content {
+    text-align: center;
+    background: linear-gradient(145deg, #e7c59f, #d0a671); /* Soft gradient like wood */
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.container .content h3 {
+    font-size: 30px;
+    color: #3c2a21; /* Dark wood */
+}
+
+.container .content h3 span {
+    background: #8e5d3d; /* Dark wood brown */
+    color: #fff;
+    border-radius: 5px;
+    padding: 0 15px;
+}
+
+.container .content h1 {
+    font-size: 50px;
+    color: #3c2a21;
+}
+
+.container .content h1 span {
+    color: #8e5d3d; /* Highlight color */
+}
+
+.container .content p {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #5b3a29; /* Lighter wood tone */
+}
+
+.container .content .btn {
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 20px;
+    background: #8e5d3d;
+    color: #fff;
+    margin: 0 5px;
+    text-transform: capitalize;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container .content .btn:hover {
+    background: #c6844e;
+}
+
+/* Forms */
+.form-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #e7c59f;
+}
+
+.form-container form {
+    background: #d6a46b; /* Wooden beige */
+    border-radius: 10px;
+    padding: 40px;
+    width: 500px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.form-container form h3 {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #3c2a21; /* Dark wood */
+}
+
+.form-container form input,
+.form-container form select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 17px;
+    margin: 10px 0;
+    background: #f7e1b5; /* Light beige background */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container form select option {
+    background: #fff;
+}
+
+.form-container form .form-btn {
+    background: #8e5d3d;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 12px;
+}
+
+.form-container form .form-btn:hover {
+    background: #c6844e;
+}
+
+.form-container form p {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #3c2a21;
+}
+
+.form-container form p a {
+    color: #8e5d3d;
+}
+
+.form-container form .error-msg {
+    margin: 10px 0;
+    display: block;
+    background: #8e5d3d;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 10px;
+}
+
+/* General Styling for Footer and Other Content */
+footer {
+    background: #8e5d3d; /* Dark wood for footer */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+}
+
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background: #8e5d3d; /* Dark wood brown */
+    padding: 20px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-size: 18px;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    margin: 10px 0;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background: #6c3f27; /* Darker brown */
+}
+
+.sidebar .btn {
+    background-color: #d06a34; /* Logout button */
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+}
+
+.sidebar .btn:hover {
+    background-color: #a64e1f;
+}
+
+/* Content Styling */
+.content {
+    margin-left: 270px; /* Offset for sidebar */
+    padding: 20px;
+}
+
+.content h2 {
+    font-size: 36px;
+    color: #3c2a21;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Card Styling */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #8e5d3d;
+    color: #fff;
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 20px;
+    font-size: 18px;
+    color: #5b3a29; /* Lighter wood tone */
+}
+
+.card-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.card-body table th, .card-body table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.card-body table th {
+    background-color: #f7e1b5; /* Light beige background */
+    color: #3c2a21;
+}
+
+/* Error Message Styling */
+.error-msg {
+    background: #d06a34;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Footer Styling */
+footer {
+    background: #8e5d3d; /* Dark wood for footer */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+}
+
